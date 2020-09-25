@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@color/Backgcolor"
+    android:layout_height="match_parent"
+    tools:context=".loginScreen">
+    <LinearLayout
+        android:layout_gravity="top|end"
+        android:gravity="end|top"
+       android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/bt_skip"
+            android:gravity="center"
+            android:background="@color/Backgcolor"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:text="Skip >>"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        app:srcCompat="@drawable/ic_splas_logo_01" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:padding="10dp"
+            android:background="@drawable/shapback"
+            android:id="@+id/tv_loginid"
+            android:hint="Gmail id"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="15dp"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:padding="10dp"
+            android:background="@drawable/shapback"
+            android:id="@+id/tv_loginpass"
+            android:hint="Pssword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textColor="@color/buttocolor"
+            android:id="@+id/tv_forget"
+            android:text="Forget Pssword"
+            android:gravity="end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/bt_login"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:text="Login"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:background="@drawable/buttionshap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+<TextView
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:gravity="center"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:text="*"
+    android:textColor="@color/Textcolor"
+    android:layout_height="1dp"/>
+    <com.google.android.gms.common.SignInButton
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+<LinearLayout
+    android:gravity="bottom|center_horizontal"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    android:layout_marginBottom="20dp"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_weight="1"
+        android:textColor="@color/white"
+        android:id="@+id/tv_newacount"
+        android:text="Don't have an Account ? "
+        android:gravity="end|center_horizontal"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+
+        android:layout_weight="1"
+        android:textColor="@color/buttocolor"
+        android:id="@+id/tv_registation"
+        android:text="Register Now !"
+        android:gravity="start|center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
+
+</LinearLayout>

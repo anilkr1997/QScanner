@@ -1,0 +1,18 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="fab_bottem">12dp</dimen>
+    <dimen name="fab_Reght">12dp</dimen>
+    <!-- Styles -->
+
+    <!-- Item Detail -->
+
+    <dimen name="padding_medium">12dp</dimen>
+
+    <dimen name="dp32">32dp</dimen>
+
+    <dimen name="dp10">10dp</dimen>
+    <dimen name="dp5">5dp</dimen>
+    <dimen name="cmmarg">50dp</dimen>
+
+
+</resources>

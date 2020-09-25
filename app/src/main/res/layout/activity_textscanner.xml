@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".Textscanner">
+    <SurfaceView
+        android:background="@drawable/fabback"
+        android:layout_marginLeft="@dimen/cmmarg"
+        android:layout_marginRight="@dimen/cmmarg"
+        android:layout_marginTop="@dimen/cmmarg"
+        android:id="@+id/surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"/>
+    <ScrollView
+        android:id="@+id/scrollable"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/cmmarg"
+        android:layout_marginRight="@dimen/cmmarg"
+        android:layout_width="match_parent"
+        android:background="@drawable/shapback"
+        android:layout_height="150dp">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:scrollbars="vertical"
+            android:textColor="@color/buttocolor" />
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/froword"
+        android:layout_margin="@dimen/dp5"
+        android:layout_gravity="right|end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@color/white"
+        app:srcCompat="@drawable/ic_baseline_file_copy_24" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
