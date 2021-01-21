@@ -50,7 +50,7 @@
                     android:textSize="18dp"
                     android:textStyle="bold" />
                 <Button
-
+android:visibility="gone"
                     android:id="@+id/bt_delete"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

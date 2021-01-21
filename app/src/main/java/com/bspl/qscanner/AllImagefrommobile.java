@@ -40,12 +40,16 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.File;
 
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Formatter;
 
 import static android.os.Environment.getExternalStorageDirectory;
 
 
-public class AllImagefrommobile extends AppCompatActivity {
+public class AllImagefrommobile extends AppCompatActivity implements ClickListener {
 
     private AllimgAdopter adopter;
     ArrayList<Imagefromgallery> imagearray = new ArrayList<>();
@@ -84,7 +88,6 @@ public class AllImagefrommobile extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         Bundle bundle = getIntent().getExtras();
          flage=bundle.getString("flage");
-        Log.e("flage", flage);
         if (flage.equals("gallery")) {
             Log.e("flag", "flage");
             prograssDilogbox.show();
@@ -207,9 +210,12 @@ public class AllImagefrommobile extends AppCompatActivity {
 
                     b = fileList.get(k).toString();
                     imagearra.setImagename(b);
-
+                    imagearra.setSelected(false);
                     imagearray.add(imagearra);
         }
+        SimpleDateFormat formatter= new SimpleDateFormat("yyyyMMddHHmmss");
+        Collections.sort(imagearray, Collections.reverseOrder());
+
         adopter = new AllimgAdopter(AllImagefrommobile.this, imagearray);
                 recyclerView.setAdapter(adopter);
                 prograssDilogbox.dismiss();
@@ -223,5 +229,13 @@ public class AllImagefrommobile extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onClick(View view, int position) {
 
+    }
+
+    @Override
+    public void onLongClick(View view, int position) {
+
+    }
 }

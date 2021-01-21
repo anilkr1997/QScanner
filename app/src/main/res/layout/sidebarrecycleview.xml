@@ -13,13 +13,12 @@
         android:padding="5dp"
         android:layout_gravity="center_horizontal"
         app:srcCompat="@drawable/ic_icon_5_01"
-        android:layout_width="30dp"
-        android:layout_height="30dp">
+        android:layout_width="50dp"
+        android:layout_height="50dp">
 
     </ImageView>
     <TextView
         android:id="@+id/sidbartext"
-
         android:padding="5dp"
         android:textSize="18dp"
         android:textColor="@color/Textcolor"

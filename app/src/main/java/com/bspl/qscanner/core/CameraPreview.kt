@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.bspl.qscanner.core
 
 import android.content.Context
@@ -9,13 +11,15 @@ import android.view.SurfaceHolder
 import android.view.SurfaceView
 import android.view.View
 
+@Suppress("DEPRECATION")
 @Deprecated("used when given support below api 21")
 class CameraPreview(context: Context) : SurfaceView(context), SurfaceHolder.Callback {
 
 
-    private var onPictureListener: (Bitmap) -> Unit = {}
+    private var onPictureListener: (Bitmap) -> Unit = {
+    }
 
-    private val pictureCallback = Camera.PictureCallback { data, camera ->
+    private val pictureCallback = Camera.PictureCallback { data, _ ->
         val bitmap = BitmapFactory.decodeByteArray(data, 0, data.size)
         onPictureListener(bitmap)
 

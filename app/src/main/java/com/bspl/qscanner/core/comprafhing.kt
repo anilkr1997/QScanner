@@ -1,6 +1,7 @@
+@file:Suppress("DEPRECATION")
+
 package com.bspl.qscanner.core
 
-import android.content.Context
 import android.graphics.*
 import android.graphics.Paint.FILTER_BITMAP_FLAG
 import android.media.ExifInterface
@@ -14,7 +15,7 @@ import java.io.IOException
 object comprafhing {
     private const val maxHeight = 1280.0f
     private const val maxWidth = 1280.0f
-fun compressImage(context: Context, imagePath: String): String? {
+fun compressImage(imagePath: String): String? {
     var scaledBitmap: Bitmap?
 
     val options = BitmapFactory.Options()
@@ -95,7 +96,7 @@ fun compressImage(context: Context, imagePath: String): String? {
     }
 
     val out: FileOutputStream?
-    val filepath = getFilename(context)
+    val filepath = getFilename()
     try {
         out = FileOutputStream(filepath)
         //write the compressed bitmap at the destination specified by filename.
@@ -128,7 +129,7 @@ private fun calculateInSampleSize(options: BitmapFactory.Options, reqWidth: Int,
     return inSampleSize
 }
 
-private fun getFilename(context: Context): String {
+private fun getFilename(): String {
     val mediaStorageDir = File(Environment.getExternalStorageDirectory(),"/comprash");
     // Create the storage directory if it does not exist
     if (!mediaStorageDir.exists()) {

@@ -51,6 +51,7 @@ public class popuobox {
         isSelected=dialog.findViewById(R.id.lay_selection);
         isSuccess=dialog.findViewById(R.id.lay_isSuccess);
         isdelete=dialog.findViewById(R.id.bt_delete);
+        isdelete.setVisibility(View.GONE);
         tv_actionname=dialog.findViewById(R.id.actionname);
          isSuccess.setVisibility(View.GONE);
         dialog.show();

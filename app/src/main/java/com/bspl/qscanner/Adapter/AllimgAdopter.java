@@ -30,7 +30,8 @@ public class AllimgAdopter extends RecyclerView.Adapter<AllimgAdopter.MyViewHold
     ArrayList<Imagefromgallery> imagefromgallery;
     AllImagefrommobile allImagefrommobile;
     ArrayList<Imagefromgallery> selected;
-
+    ClickListener clickListener;
+    View listItem;
     public AllimgAdopter(AllImagefrommobile allImagefrommobile, ArrayList<Imagefromgallery> imagefromgallery) {
         this.allImagefrommobile = allImagefrommobile;
         this.imagefromgallery = imagefromgallery;
@@ -47,14 +48,41 @@ public class AllimgAdopter extends RecyclerView.Adapter<AllimgAdopter.MyViewHold
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View listItem = layoutInflater.inflate(R.layout.allimage, parent, false);
+         listItem = layoutInflater.inflate(R.layout.allimage, parent, false);
         return new MyViewHolder(listItem);
     }
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
 
-        holder.bind(imagefromgallery.get(position));
+       // holder.bind(imagefromgallery.get(position));
+     // holder.  checkBox.setVisibility(!imagefromgallery.get(position).isSelected() ? View.VISIBLE : View.VISIBLE);
+        if(!imagefromgallery.get(position).isSelected()){
+            holder.checkBox.setVisibility(View.GONE);
+        }else {
+            holder.checkBox.setVisibility(View.VISIBLE);
+
+            holder.checkBox.setImageResource(R.drawable.ic_baseline_check_circle_24);
+
+        }
+        holder. imageView.setImageURI(Uri.parse(imagefromgallery.get(position).getImagename()));
+
+        holder. imageView.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        if(!imagefromgallery.get(position).isSelected()){
+            holder.checkBox.setVisibility(View.VISIBLE);
+
+            holder.checkBox.setImageResource(R.drawable.ic_baseline_check_circle_24);
+            imagefromgallery.get(position).setSelected(true);
+        }else if(imagefromgallery.get(position).isSelected()) {
+            holder.checkBox.setVisibility(View.GONE);
+            imagefromgallery.get(position).setSelected(false);
+
+        }
+    }
+});
+
 
 
     }
@@ -84,24 +112,22 @@ public class AllimgAdopter extends RecyclerView.Adapter<AllimgAdopter.MyViewHold
         }
 
 
-        public void bind(final Imagefromgallery imagefromgallery) {
-
-            checkBox.setVisibility(!imagefromgallery.isSelected() ? View.GONE : View.VISIBLE);
-            imageView.setImageURI(Uri.parse(imagefromgallery.getImagename()));
-
-
-            itemView.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View v) {
-                   // if(selected.size()<0)
-                    imagefromgallery.setSelected(!imagefromgallery.isSelected());
-                    checkBox.setVisibility(imagefromgallery.isSelected() ? View.VISIBLE : View.GONE);
-
-                    return false;
-                }
-            });
-
-        }
+//        public void bind(final Imagefromgallery imagefromgallery) {
+//
+//          itemView.setOnLongClickListener(new View.OnLongClickListener() {
+//                @Override
+//                public boolean onLongClick(View v) {
+//                    // if(selected.size()<0)
+//                    imagefromgallery.setSelected(!imagefromgallery.isSelected());
+//
+//                   checkBox.setVisibility(imagefromgallery.isSelected() ? View.VISIBLE : View.GONE);
+//
+//                    return false;
+//                }
+//            });
+//
+//
+//        }
 
 
     }
@@ -119,6 +145,10 @@ public class AllimgAdopter extends RecyclerView.Adapter<AllimgAdopter.MyViewHold
             }
         }
         return selected;
+    }
+    public interface ClickListener {
+        public void onClick(View view, Imagefromgallery position);
+        public void onLongClick(View view, Imagefromgallery position);
     }
 
 }

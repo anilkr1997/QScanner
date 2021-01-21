@@ -22,6 +22,7 @@ import java.util.*
 import java.util.Collections.singletonList
 import kotlin.Comparator
 
+@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
 
 class Camera2(private val activity: Activity, private val textureView: AutoFitTextureView) {

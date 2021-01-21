@@ -7,13 +7,14 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_main">
     <ListView
-        android:layout_margin="@dimen/dp10"
         android:id="@+id/lv_pdf"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:divider="@color/white"
         android:dividerHeight="5dp"
-
+        android:background="#E4E4E4"
+        android:layout_marginBottom="@dimen/dp10"
+        android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -88,7 +89,7 @@
         android:backgroundTintMode="add"
         android:layout_margin="@dimen/dp10"
         android:contentDescription="@string/app_name"
-        app:backgroundTint="@color/white"
+        app:backgroundTint="@color/buttocolor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.977"

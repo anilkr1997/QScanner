@@ -34,6 +34,7 @@
                 android:background="@drawable/shapback"
                 android:hint="Name"
                 android:padding="10dp"
+                android:inputType="textPersonName"
                  />
             <EditText
                 android:id="@+id/Et_Emailid"
@@ -42,7 +43,8 @@
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/shapback"
                 android:hint="Gmail id"
-                android:padding="10dp" />
+                android:padding="10dp"
+                android:inputType="textWebEmailAddress"/>
             <EditText
                 android:id="@+id/Et_phonenumber"
                 android:layout_width="match_parent"
@@ -50,7 +52,7 @@
                 android:background="@drawable/shapback"
                 android:hint="Phone Number"
                 android:layout_marginBottom="15dp"
-
+android:inputType="phone"
                 android:padding="10dp" />
 
             <EditText
@@ -60,7 +62,8 @@
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/shapback"
                 android:hint="Password"
-                android:padding="10dp" />
+                android:padding="10dp"
+                android:inputType="textWebPassword"/>
             <EditText
                 android:id="@+id/Et_confermpassword"
                 android:layout_width="match_parent"
@@ -68,7 +71,8 @@
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/shapback"
                 android:hint="Conferm Password"
-                android:padding="10dp" />
+                android:padding="10dp"
+                android:inputType="textWebPassword"/>
 
 
             <Button

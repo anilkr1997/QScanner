@@ -6,10 +6,8 @@
     android:layout_height="match_parent">
     <com.bspl.qscanner.core.AutoFitTextureView
         android:id="@+id/camera_view"
-        android:layout_marginTop="60dp"
         android:layout_marginBottom="80dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
@@ -99,8 +97,6 @@
             android:id="@+id/iv_gallery"
             android:layout_width="90dp"
             android:layout_height="90dp"
-
-
             android:layout_marginEnd="@dimen/dp10"
             android:contentDescription="@string/app_name"
             android:padding="20dp"

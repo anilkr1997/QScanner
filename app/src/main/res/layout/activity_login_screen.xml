@@ -47,19 +47,26 @@
         <EditText
             android:padding="10dp"
             android:background="@drawable/shapback"
-            android:id="@+id/tv_loginid"
-            android:hint="Gmail id"
+            android:id="@+id/et_loginid"
+            android:hint="User id"
             android:layout_width="match_parent"
             android:layout_marginBottom="15dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:inputType="textWebEmailAddress"
+            android:drawablePadding="@dimen/dp10"
+            android:drawableLeft="@drawable/ic_baseline_perm_identity_24"
+            />
 
         <EditText
+            android:drawablePadding="@dimen/dp10"
             android:padding="10dp"
             android:background="@drawable/shapback"
-            android:id="@+id/tv_loginpass"
-            android:hint="Pssword"
+            android:id="@+id/et_loginpass"
+            android:hint="Password"
+            android:drawableLeft="@drawable/ic_baseline_lock_open_24"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:inputType="textWebPassword"/>
         <TextView
             android:textColor="@color/buttocolor"
             android:id="@+id/tv_forget"
@@ -89,9 +96,11 @@
     android:textColor="@color/Textcolor"
     android:layout_height="1dp"/>
     <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginTop="20dp"
+
         android:layout_alignParentBottom="true"
         android:layout_gravity="center_horizontal"
         android:layout_width="match_parent"

@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package mobin.customcamera.core
 
 import android.graphics.Bitmap
@@ -34,10 +36,7 @@ object Converters {
 
         try {
             val myStuff =
-                File(
-                    Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
-                    "QScanner"
-                )
+                File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "BsplQScanner")
             if (!myStuff.exists())
                 myStuff.mkdirs()
             val current = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
