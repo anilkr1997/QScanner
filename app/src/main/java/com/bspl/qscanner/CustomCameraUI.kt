@@ -17,8 +17,8 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.net.toUri
 import com.bspl.qscanner.core.Camera2
+import com.bspl.qscanner.extraclass.popuobox
 import de.hdodenhof.circleimageview.CircleImageView
 import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.activity_custom_camera_ui.*
@@ -34,10 +34,13 @@ class CustomCameraUI : AppCompatActivity() {
     private var disposable: Disposable? = null
 val PICK_IMAGE=1;
     var imagepathuri: ArrayList<String>? = null
+    private var p: popuobox? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_custom_camera_ui)
+        p = popuobox()
+
         init()
 
     }
@@ -80,7 +83,6 @@ val PICK_IMAGE=1;
                     iv_gallery.setImageURI(Uri.parse(file.path))
                    // comprafhing.compressImage(this,fullpath.toString())
 
-                   // Toast.makeText(v.context, "Saved Picture Path ${file.path}", Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -183,7 +185,7 @@ val PICK_IMAGE=1;
                         Log.e("ImagePath", "onActivityResult $realImagePath")
                         imagepathuri!!.add(realImagePath)
                     }
-              topdf(imagepathuri!!)
+                   topdf(imagepathuri!!)
                 } else if (data.data != null) {
                     val imageUri = data.data
                     realImagePath = getPath(this, imageUri!!)!!
@@ -199,6 +201,11 @@ val PICK_IMAGE=1;
     }
 
     private fun topdf(imagepathuri: ArrayList<String>) {
+        for (i in 0..imagepathuri.size) {
+            Log.v("LOG_TAG", "Selected Images  " + imagepathuri.get(i))
+        }
+
+        p!!.popuobox(this, imagepathuri, resources)
 
 
     }

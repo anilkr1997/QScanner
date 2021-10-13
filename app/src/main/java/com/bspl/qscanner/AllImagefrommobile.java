@@ -94,11 +94,7 @@ public class AllImagefrommobile extends AppCompatActivity implements ClickListen
             dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM),"/");
             getfile( dir);
 
-//            Intent intent = new Intent();
-//            intent.setType("image/*");
-//            intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-//            intent.setAction(Intent.ACTION_GET_CONTENT);
-//            startActivityForResult(Intent.createChooser(intent,"Select Picture"), 1);
+
         } else {
           dir=  new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "QScanner");
           prograssDilogbox.show();
@@ -110,25 +106,7 @@ public class AllImagefrommobile extends AppCompatActivity implements ClickListen
             public void onClick(View v) {
                 popuobox p = new popuobox();
                 prograssDilogbox.show();
-                if (adopter.getSelected().size() > 0) {
-                    StringBuilder stringBuilder = new StringBuilder();
-                    for (int i = 0; i < adopter.getSelected().size(); i++) {
-                        stringBuilder.append(adopter.getSelected().get(i).getImagename());
-                        seclectimage.add(adopter.getSelected().get(i).getImagename());
-                        stringBuilder.append("\n");
-                        Log.e("selerfd", adopter.getSelected().get(i).getImagename());
-                    }
-                    showToast.show(stringBuilder.toString().trim(), AllImagefrommobile.this);
-                    p.popuobox(AllImagefrommobile.this, seclectimage, getResources());
 
-
-                    prograssDilogbox.dismiss();
-
-                } else {
-                    showToast.show("No Selection", AllImagefrommobile.this);
-                    prograssDilogbox.dismiss();
-
-                }
             }
         });
     }
