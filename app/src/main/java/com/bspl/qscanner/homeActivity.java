@@ -459,7 +459,6 @@ private popuobox p;
         Intent intent;
         File file = new File( n);
         intent = new Intent(Intent.ACTION_VIEW);
-        Log.e("pathOpen", file.getPath());
 
         Uri contentUri;
         contentUri = Uri.fromFile(file);
